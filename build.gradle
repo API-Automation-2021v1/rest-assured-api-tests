@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+
+group 'com.jalasoft'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
+    testImplementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.3.3'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+}
+
+checkstyle {
+    toolVersion = '8.20'
+    configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
+}
+
+pmd {
+    toolVersion = '6.0.0'
+}
+
+tasks.withType(Pmd) {
+    ruleSets = ["java-basic", "java-braces", "java-unnecessary", "java-unusedcode", "java-strictexception"]
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+
+test {
+    useTestNG()
+    testLogging {
+        events 'PASSED', 'STARTED', 'FAILED', 'SKIPPED'
+    }
+}

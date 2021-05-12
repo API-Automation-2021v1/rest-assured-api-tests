@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "required": [
+    "account_id",
+    "atom_enabled",
+    "automatic_planning",
+    "bugs_and_chores_are_estimatable",
+    "created_at",
+    "current_iteration_number",
+    "enable_following",
+    "enable_incoming_emails",
+    "enable_tasks",
+    "has_google_domain",
+    "id",
+    "initial_velocity",
+    "iteration_length",
+    "kind",
+    "name",
+    "number_of_done_iterations_to_show",
+    "point_scale",
+    "point_scale_is_custom",
+    "project_type",
+    "public",
+    "start_time",
+    "time_zone",
+    "updated_at",
+    "velocity_averaged_over",
+    "version",
+    "week_start_day"
+  ],
+  "properties": {
+    "account_id": {
+      "$id": "#/properties/account_id",
+      "type": "integer"
+    },
+    "atom_enabled": {
+      "$id": "#/properties/atom_enabled",
+      "type": "boolean"
+    },
+    "automatic_planning": {
+      "$id": "#/properties/automatic_planning",
+      "type": "boolean"
+    },
+    "bugs_and_chores_are_estimatable": {
+      "$id": "#/properties/bugs_and_chores_are_estimatable",
+      "type": "boolean"
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string"
+    },
+    "current_iteration_number": {
+      "$id": "#/properties/current_iteration_number",
+      "type": "integer"
+    },
+    "enable_following": {
+      "$id": "#/properties/enable_following",
+      "type": "boolean"
+    },
+    "enable_incoming_emails": {
+      "$id": "#/properties/enable_incoming_emails",
+      "type": "boolean"
+    },
+    "enable_tasks": {
+      "$id": "#/properties/enable_tasks",
+      "type": "boolean"
+    },
+    "has_google_domain": {
+      "$id": "#/properties/has_google_domain",
+      "type": "boolean"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer"
+    },
+    "initial_velocity": {
+      "$id": "#/properties/initial_velocity",
+      "type": "integer"
+    },
+    "iteration_length": {
+      "$id": "#/properties/iteration_length",
+      "type": "integer"
+    },
+    "kind": {
+      "$id": "#/properties/kind",
+      "type": "string"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string"
+    },
+    "number_of_done_iterations_to_show": {
+      "$id": "#/properties/number_of_done_iterations_to_show",
+      "type": "integer"
+    },
+    "point_scale": {
+      "$id": "#/properties/point_scale",
+      "type": "string"
+    },
+    "point_scale_is_custom": {
+      "$id": "#/properties/point_scale_is_custom",
+      "type": "boolean"
+    },
+    "project_type": {
+      "$id": "#/properties/project_type",
+      "type": "string"
+    },
+    "public": {
+      "$id": "#/properties/public",
+      "type": "boolean"
+    },
+    "start_time": {
+      "$id": "#/properties/start_time",
+      "type": "string"
+    },
+    "time_zone": {
+      "$id": "#/properties/time_zone",
+      "type": "object",
+      "required": [
+        "kind",
+        "olson_name",
+        "offset"
+      ],
+      "properties": {
+        "kind": {
+          "$id": "#/properties/time_zone/properties/kind",
+          "type": "string"
+        },
+        "olson_name": {
+          "$id": "#/properties/time_zone/properties/olson_name",
+          "type": "string"
+        },
+        "offset": {
+          "$id": "#/properties/time_zone/properties/offset",
+          "type": "string"
+        }
+      }
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string"
+    },
+    "velocity_averaged_over": {
+      "$id": "#/properties/velocity_averaged_over",
+      "type": "integer"
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "type": "integer"
+    },
+    "week_start_day": {
+      "$id": "#/properties/week_start_day",
+      "type": "string"
+    }
+  }
+}
