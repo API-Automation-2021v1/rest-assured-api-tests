@@ -5,7 +5,8 @@ jdk:
   - openjdk11
 
 script:
-  - ./gradlew assemble
+  - ./gradlew compileJava
+  - ./gradlew compileTestJava
   - ./gradlew checkstyleMain
   - ./gradlew checkstyleTest
   - ./gradlew pmdMain
