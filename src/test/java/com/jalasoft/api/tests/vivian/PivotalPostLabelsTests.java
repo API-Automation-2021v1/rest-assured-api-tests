@@ -41,9 +41,8 @@ public class PivotalPostLabelsTests {
     @Test
     public void createLabelTest() {
         String body = "{\"name\":\"testing creation label\"}";
-        String endPointFirstPart = "projects/".concat(projectId);
-        String endPointFinal = endPointFirstPart.concat("/labels");
-        Response response = RequestManager.sendPostRequest(endPointFinal, body);
+        String endPoint = "projects/".concat(projectId).concat("/labels");
+        Response response = RequestManager.sendPostRequest(endPoint, body);
 
         final int expectedStatusCode = 200;
         int actualStatusCode = response.statusCode();
@@ -69,10 +68,8 @@ public class PivotalPostLabelsTests {
     @AfterMethod
     public void deleteLabel() {
         if (labelId != null && !labelId.isEmpty()) {
-            String endPointFirstPart = "projects/".concat(projectId);
-            String endPointSecondPart = endPointFirstPart.concat("/labels/");
-            String endPointFinal = endPointSecondPart.concat(labelId);
-            Response response = RequestManager.sendDeleteRequest(endPointFinal);
+            String endPoint = "projects/".concat(projectId).concat("/labels/").concat(labelId);
+            Response response = RequestManager.sendDeleteRequest(endPoint);
             final int expectedStatusCode = 204;
             Assert.assertEquals(response.statusCode(), expectedStatusCode, "The label was not deleted.");
         }
