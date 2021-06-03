@@ -37,6 +37,13 @@ public class PivotalPostProjectTests {
     }
 
     /**
+     * @return the projectID for use in another classes.
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    /**
      * Tests post conditions.
      */
     @AfterMethod
@@ -48,4 +55,5 @@ public class PivotalPostProjectTests {
             Assert.assertEquals(response.statusCode(), expectedStatusCode, "The project was not deleted.");
         }
     }
+
 }
