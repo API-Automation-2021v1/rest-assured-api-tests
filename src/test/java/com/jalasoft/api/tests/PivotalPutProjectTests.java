@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * Defines Pivotal Tracker POST story tests.
+ * Defines Pivotal Tracker PUT project tests.
  */
 public class PivotalPutProjectTests {
 
@@ -30,7 +30,7 @@ public class PivotalPutProjectTests {
     }
 
     /**
-     * Test to create a new story.
+     * Test to modify a project.
      */
     @Test
     public void createStoryTest() {
