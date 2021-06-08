@@ -45,8 +45,7 @@ public class PivotalPutStoryTests {
      */
     @Test
     public void updateStoryTest() {
-        String body = "{\"current_state\":\"accepted\",\"estimate\":1,\"name\":\"new name\"}";//"{\"name\": \"API Automation new Story\",\"id\": "+storiesId+"}";
-        // {"current_state":"accepted","estimate":1,"name":"Exhaust ports have ray shielding"}
+        String body = "{\"current_state\":\"accepted\",\"estimate\":1,\"name\":\"new name\"}";
         System.out.println("StoryID " + body);
         String endpoint = "projects/" + projectId + "/stories/" + storiesId;
         Response response = RequestManager.sendPutRequest(endpoint, body);

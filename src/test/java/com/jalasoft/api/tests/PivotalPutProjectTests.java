@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * Defines Pivotal Tracker PUT projects tests.
+ * Defines Pivotal Tracker POST story tests.
  */
 public class PivotalPutProjectTests {
 
@@ -30,10 +30,10 @@ public class PivotalPutProjectTests {
     }
 
     /**
-     * Test to modify a project providing a new name.
+     * Test to create a new story.
      */
     @Test
-    public void modifyProjectNameTest() {
+    public void createStoryTest() {
         String body = "{\"name\": \"API Automation - Modified Name\"}";
         Response response = RequestManager.sendPutRequest("projects/".concat(projectId), body);
 
