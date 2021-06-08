@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 public class PivotalPostStoryTests {
 
     private String projectId;
+
     /**
      * Tests pre conditions.
      */
@@ -26,13 +27,14 @@ public class PivotalPostStoryTests {
         Assert.assertEquals(response.statusCode(), expectedStatusCode, "The project was not created.");
         projectId = response.jsonPath().getString("id");
     }
+
     /**
      * Test to create a project specifying name.
      */
     @Test
     public void createStoryTest() {
         String body = "{\"name\": \"API Automation Story\"}";
-        String endpoint = "/projects/"+ projectId +"/stories";
+        String endpoint = "/projects/" + projectId + "/stories";
         Response response = RequestManager.sendPostRequest(endpoint, body);
         final int expectedStatusCode = 200;
         int actualStatusCode = response.statusCode();

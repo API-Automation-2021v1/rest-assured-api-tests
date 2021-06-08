@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 public class PivotalPutStoryTests {
     private String projectId;
     private String storiesId;
+
     /**
      * Tests pre conditions.
      */
@@ -32,7 +33,7 @@ public class PivotalPutStoryTests {
          * Create a new Story
          */
         String bodyStory = "{\"name\": \"API Automation Story\"}";
-        Response responseStory = RequestManager.sendPostRequest("projects/".concat(projectId)+"/stories", bodyStory);
+        Response responseStory = RequestManager.sendPostRequest("projects/".concat(projectId) + "/stories", bodyStory);
         final int expectedStatusCodeStory = 200;
         int actualStatusCode = responseStory.statusCode();
         Assert.assertEquals(actualStatusCode, expectedStatusCodeStory, "The expected status code does not match.");
@@ -46,8 +47,8 @@ public class PivotalPutStoryTests {
     public void updateStoryTest() {
         String body = "{\"current_state\":\"accepted\",\"estimate\":1,\"name\":\"new name\"}";//"{\"name\": \"API Automation new Story\",\"id\": "+storiesId+"}";
         // {"current_state":"accepted","estimate":1,"name":"Exhaust ports have ray shielding"}
-        System.out.println("StoryID "+body);
-        String endpoint = "projects/"+ projectId +"/stories/"+ storiesId;
+        System.out.println("StoryID " + body);
+        String endpoint = "projects/" + projectId + "/stories/" + storiesId;
         Response response = RequestManager.sendPutRequest(endpoint, body);
         final int expectedStatusCode = 200;
         int actualStatusCode = response.statusCode();
